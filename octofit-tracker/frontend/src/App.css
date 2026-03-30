@@ -1,0 +1,208 @@
+:root {
+  --octofit-bg-a: #f6fbff;
+  --octofit-bg-b: #e8fff3;
+  --octofit-text: #1d2f42;
+  --octofit-text-soft: #4f667b;
+  --octofit-heading: #0d3b66;
+  --octofit-accent: #087f8c;
+  --octofit-accent-dark: #0a5f68;
+  --octofit-accent-warm: #f29b28;
+  --octofit-link: #0a7ca3;
+  --octofit-link-hover: #04506a;
+  --octofit-border: #cfe4df;
+}
+
+body {
+  color: var(--octofit-text);
+  background:
+    radial-gradient(circle at top right, rgba(8, 127, 140, 0.14), transparent 34%),
+    radial-gradient(circle at 12% 22%, rgba(242, 155, 40, 0.18), transparent 32%),
+    linear-gradient(140deg, var(--octofit-bg-a), var(--octofit-bg-b));
+  min-height: 100vh;
+}
+
+.App {
+  color: var(--octofit-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--octofit-heading);
+}
+
+p,
+small,
+label,
+span,
+li {
+  color: var(--octofit-text-soft);
+}
+
+a {
+  color: var(--octofit-link);
+  text-decoration-color: color-mix(in srgb, var(--octofit-link), transparent 60%);
+}
+
+a:hover,
+a:focus {
+  color: var(--octofit-link-hover);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.brand-wrap {
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(8, 127, 140, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(230, 252, 248, 0.95));
+  box-shadow: 0 12px 24px rgba(17, 66, 89, 0.18);
+  padding: 6px;
+}
+
+.app-nav {
+  border: 1px solid rgba(8, 127, 140, 0.2);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.93), rgba(235, 251, 247, 0.96));
+  box-shadow: 0 10px 24px rgba(22, 43, 58, 0.08);
+}
+
+.navbar-brand {
+  color: var(--octofit-heading);
+}
+
+.navbar-nav .nav-link {
+  color: #365064;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.32);
+  background: linear-gradient(130deg, var(--octofit-accent), #18a6b5);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+  background: linear-gradient(130deg, var(--octofit-accent-dark), #117985);
+}
+
+.btn,
+.btn:focus,
+.btn:active {
+  border-radius: 999px;
+}
+
+.btn-outline-primary {
+  color: #0a5d78;
+  border-color: #0a8aa5;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #ffffff;
+  border-color: #0a8aa5;
+  background: linear-gradient(125deg, #0a8aa5, #16a58f);
+}
+
+.btn-primary {
+  border-color: #0b7f8f;
+  background: linear-gradient(125deg, #0b7f8f, #15a48f);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  border-color: #0a5f68;
+  background: linear-gradient(125deg, #0a5f68, #129381);
+}
+
+.entity-card {
+  border: 1px solid var(--octofit-border);
+  border-radius: 1rem;
+  box-shadow: 0 12px 28px rgba(30, 42, 53, 0.09);
+  animation: card-enter 0.45s ease both;
+}
+
+.entity-card .card-header,
+.entity-card .card-footer {
+  background: linear-gradient(120deg, #ffffff, #f4fbfa);
+  border-color: var(--octofit-border);
+}
+
+.entity-table thead th {
+  background: linear-gradient(180deg, #e4f7f3, #d8f1eb);
+  color: #164767;
+  border-bottom-width: 1px;
+}
+
+.entity-table tbody tr:hover {
+  background-color: rgba(8, 127, 140, 0.09);
+}
+
+.table {
+  border-color: var(--octofit-border);
+}
+
+.table a {
+  font-weight: 600;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(16, 119, 138, 0.04);
+}
+
+.card-title {
+  color: var(--octofit-heading);
+}
+
+.text-secondary {
+  color: #5c7286 !important;
+}
+
+.entity-modal .modal-content {
+  border-radius: 0.9rem;
+  border: 1px solid var(--octofit-border);
+  box-shadow: 0 22px 40px rgba(25, 41, 53, 0.24);
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .app-header {
+    position: static;
+  }
+
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+}
